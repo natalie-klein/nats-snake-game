@@ -14,6 +14,20 @@ class Head {
   }
 
   move() {
+
+  const bodyCollision = (headPos) => {
+    for (let i = 0 ; i < this.bodyArr.length ; i++){
+      if (headPos.top == this.bodyArr[i].node.position().top && headPos.left == this.bodyArr[i].node.position().left) {
+        $("div").remove(".bodies");
+        delete this.bodyArr;
+        this.bodyArr = []
+  
+        alert("game over, yo body and yo head collided");
+      }
+  }
+}
+  
+
     let headDirection = this.currentheadDirection;
     let headPosition = this.node.position();
     let applePosition = $("#apple").position();
@@ -47,14 +61,13 @@ class Head {
     this.node.css(headPosition);
 
     if (headPosition.top > 450 || headPosition.left > 450 || headPosition.left < 0 || headPosition.top < 0) {
-      console.log('in hit border condition');
-
+      
+// deletes the elements with the class 'bodies', then deletes the bodyArr, then re-initializes it as a empty array 
       $("div").remove(".bodies");
       delete this.bodyArr;
       this.bodyArr = []
 
-      alert("game over");
-
+      alert("game over, you went out of bounds");
       apple.style.top = rand_50(0,450);
       apple.style.left = rand_50(0,450);
       this.node.css({ top: 0, left: 0 });
@@ -70,6 +83,7 @@ class Head {
       setTimeout(this.move.bind(this), this.SPEED);
     } else {
       setTimeout(this.move.bind(this), this.SPEED);
+      if (this.bodyArr !== []) bodyCollision(headPosition);
     }
   } //move function closing bracket
 } // class Head closing bracket 
