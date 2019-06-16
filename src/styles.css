@@ -1,20 +1,36 @@
 #head {
-  background: black;
+  /* background: black; */
   height: 50px;
   width: 50px;
-  background-color: green;
+  /* background-color: green; */
+  /* background-image: linear-gradient(to right, green , lightgreen); */
+  border: 1px solid magenta;
   position: absolute;
+  border-radius: 5px; 
+  z-index: 100;
 }
 
 #board {
-  height: 700px;
-  width: 700px;
-  border: 1px black solid;
+  height: 500px;
+  width: 500px;
+  border: 2px black solid;
   position: relative;
+  background-image: linear-gradient(to right, magenta , lightpink);
+
 }
 
 #apple {
-  height: 50px;
-  width: 50px;
+  height: 80px;
+  width: 80px;
+  position: absolute;
+}
+
+#body {
+  background: black;
+  height: 60px;
+  width: 60px;
+  background-color: green;
+  background-image: linear-gradient(to right, green , lightgreen);
+  border-radius: 5px; 
   position: absolute;
 }
