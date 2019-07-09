@@ -20,17 +20,25 @@
 }
 
 #apple {
-  height: 80px;
-  width: 80px;
+  height: 50px;
+  width: 50px;
   position: absolute;
 }
 
-#body {
+.bodies {
   background: black;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   background-color: green;
   background-image: linear-gradient(to right, green , lightgreen);
   border-radius: 5px; 
   position: absolute;
+}
+
+#scoreBoard {
+  color: teal;
+  font-size: 50px;
+  position: absolute;
+  
+
 }
